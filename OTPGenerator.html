@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP GENERATOR</title>
+</head>
+<style>
+    .container{
+        border: 2px solid red;
+        height: 100%;
+        width: 500px;
+        background-color: rgb(102, 141, 128);
+        margin: 200px 500px;
+        border-radius: 5px;
+    }
+
+    h1{
+        text-align: center;
+        color: bisque;
+        
+    }
+    
+    button{
+        background-color: aliceblue;
+        color:rgba(157, 0, 255, 0.785);
+        padding: 8px;
+        border-radius: 5px;
+        margin-left: 40%;
+        border-color: rgba(87, 87, 161, 0.779);
+        
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>OTP GENERATOR</h1>
+        <button onclick="generateOtp()">GET OTP</button>
+    </div>
+
+    <script>
+        function generateOtp(){
+            let randomNumber = Math.random()*10000
+            let otp = Math.trunc(randomNumber)
+            if(otp > 999 && otp <= 9999){
+                alert("Your One time password is " + otp);
+            }
+            else{
+                generateOtp()
+            }
+        }
+    </script>
+</body>
+</html>
